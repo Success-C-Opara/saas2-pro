@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: success-django-app-project   # Name of the Deployment (can be renamed)
+spec:
+  replicas: 5                       # Number of Django Pods to run
+  selector:
+    matchLabels:
+      app: success-django            # MUST match pod labels below
+  template:
+    metadata:
+      labels:
+        app: success-django          # MUST match Service selector
+    spec:
+      containers:
+      - name: container-success-django   # Container name (free to rename)
+        image: successwise1/saas:latest  # Docker image to run
+        imagePullPolicy: IfNotPresent       # Always pull latest image
+        ports:
+        - containerPort: 8000         # Port Django/Gunicorn listens on
