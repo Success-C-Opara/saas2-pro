@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         EC2_USER = 'ec2-user'
-        EC2_HOST = '16.170.140.55'
-        PRIVATE_KEY_PATH = 'C:/Users/Success/Downloads/electricaa-key.pem'
+        EC2_HOST = '54.242.179.83'
+        PRIVATE_KEY_PATH = 'C:/Users/Success/Downloads/jen-saskey.pem'
         IMAGE_NAME = 'success-sas-jen'
         IMAGE_TAG = "build-${env.BUILD_NUMBER}"
         GIT_REPO = 'https://github.com/Success-C-Opara/saas2-pro.git'
